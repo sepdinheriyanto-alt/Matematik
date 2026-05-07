@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Matematika SMA</title>
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
-        .container { text-align: center; padding: 20px; background: white; border-radius: 12px; shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn { display: block; width: 200px; padding: 15px; margin: 10px auto; text-decoration: none; color: white; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background-color: #f0f2f5; }
+        .container { text-align: center; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 400px; }
+        h1 { color: #1e293b; margin-bottom: 10px; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 15px 0; text-decoration: none; color: white; border-radius: 12px; font-weight: bold; transition: 0.3s; box-sizing: border-box; }
         .btn-materi { background-color: #2563eb; }
+        .btn-materi:hover { background-color: #1e40af; transform: translateY(-2px); }
         .btn-kuis { background-color: #10b981; }
-        .btn:hover { opacity: 0.8; transform: scale(1.05); }
+        .btn-kuis:hover { background-color: #059669; transform: translateY(-2px); }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Selamat Datang!</h1>
-        <p>Silakan pilih menu di bawah ini:</p>
+        <p>Pilih aktivitas belajar hari ini:</p>
         <a href="materi.html" class="btn btn-materi">📖 Baca Materi</a>
         <a href="kuis.html" class="btn btn-kuis">📝 Mulai Kuis</a>
     </div>

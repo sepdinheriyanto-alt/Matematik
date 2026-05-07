@@ -4,140 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modul Materi - Matematika SMA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-slate-50">
-
-    <nav class="bg-white shadow-md p-4 mb-6">
-        <a href="index.html" class="text-blue-600 font-bold"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a>
-    </nav>
-
-    <div class="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-        <h1 class="text-3xl font-bold text-slate-800 mb-4">Eksponen dan Logaritma</h1>
-        <div class="prose text-gray-700 leading-relaxed">
-            
-            <section class="mb-8">
-                <h2 class="text-xl font-semibold text-blue-600 border-b-2 border-blue-100 pb-2 mb-4">1. Sifat-Sifat Eksponen</h2>
-                <div class="bg-blue-50 p-4 rounded-lg italic mb-4">
-                    "Jika a adalah bilangan real dan n adalah bilangan bulat positif..."
-                </div>
-                <ul class="list-disc ml-6 space-y-2">
-                    <li><strong>Perkalian:</strong> a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></li>
-                    <li><strong>Pembagian:</strong> a<sup>m</sup> : a<sup>n</sup> = a<sup>m-n</sup></li>
-                    <li><strong>Perpangkatan:</strong> (a<sup>m</sup>)<sup>n</sup> = a<sup>m×n</sup></li>
-                </ul>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-xl font-semibold text-blue-600 border-b-2 border-blue-100 pb-2 mb-4">2. Dasar Logaritma</h2>
-                <p class="mb-4">Logaritma adalah kebalikan (invers) dari pemangkatan.</p>
-                <div class="bg-gray-100 p-4 text-center rounded-lg font-mono text-lg">
-                    <sup>a</sup>log b = c &nbsp; ⇔ &nbsp; a<sup>c</sup> = b
-                </div>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-xl font-semibold text-red-600 mb-4"><i class="fab fa-youtube"></i> Video Penjelasan</h2>
-                <div class="aspect-video">
-                    <iframe class="w-full h-full rounded-lg shadow" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </section>
-
-        </div>
-
-        <div class="mt-10 pt-6 border-t border-gray-100 flex justify-between">
-            <p class="text-sm text-gray-400 italic">Modul Kelas X - SMA</p>
-            <a href="kuis.html" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 shadow-md">Coba Latihan Soal →</a>
-        </div>
-    </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Eksponen & Aljabar - Kelas X</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        .header { background: #2c3e50; color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 30px; }
-        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h2 { color: #2980b9; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .formula { background: #eef2f3; padding: 15px; border-left: 5px solid #3498db; font-family: 'Courier New', Courier, monospace; font-weight: bold; margin: 10px 0; }
-        .example { background: #fff3cd; padding: 15px; border-radius: 5px; margin-top: 10px; }
-        .btn-back { display: inline-block; padding: 10px 20px; background: #34495e; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 20px; }
-        .btn-back:hover { background: #2c3e50; }
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: var(--bg); 
+        }
+        .nav-link { 
+            display: inline-flex; 
+            align-items: center; 
+            text-decoration: none; 
+            color: var(--primary); 
+            font-weight: 600; 
+            margin-bottom: 20px; 
+        }
+        .header { 
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; 
+            padding: 40px 20px; 
+            border-radius: 16px; 
+            text-align: center; 
+            margin-bottom: 30px; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 25px; 
+            border: 1px solid #e2e8f0;
+        }
+        h2 { color: var(--secondary); margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+        .formula-box { 
+            background: #f1f5f9; 
+            padding: 20px; 
+            border-left: 4px solid var(--primary); 
+            font-family: 'Cambria Math', 'Times New Roman', serif; 
+            font-size: 1.2rem; 
+            margin: 15px 0; 
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box { 
+            background: #f0fdf4; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border: 1px solid #dcfce7; 
+            margin-top: 10px; 
+        }
+        .badge { 
+            background: var(--primary); 
+            color: white; 
+            padding: 4px 12px; 
+            border-radius: 99px; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+        }
+        .footer { text-align: center; margin-top: 50px; color: #64748b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="btn-back">← Kembali ke Dashboard</a>
+    <a href="index.html" class="nav-link">← Kembali ke Dashboard</a>
 
     <div class="header">
-        <h1>Matematika Kelas X: Semester 1</h1>
-        <p>Topik: Eksponen dan Operasi Aljabar Eksponen</p>
+        <span class="badge">Kelas X • Semester 1</span>
+        <h1>Eksponen & Aljabar Eksponen</h1>
+        <p>Menguasai konsep dasar bilangan berpangkat dan manipulasinya</p>
     </div>
 
     <div class="card">
-        <h2>1. Sifat-Sifat Dasar Eksponen</h2>
-        <p>Eksponen adalah perkalian berulang dari suatu bilangan yang sama.</p>
+        <h2>1. Sifat Dasar Eksponen</h2>
+        <p>Sebelum masuk ke aljabar, ingat kembali aturan dasar berikut:</p>
         
-        <div class="formula">
+        <div class="formula-box">
             a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup>
         </div>
-        <p><i>Contoh: 2<sup>3</sup> × 2<sup>2</sup> = 2<sup>3+2</sup> = 2<sup>5</sup> = 32</i></p>
-
-        <div class="formula">
+        <div class="formula-box">
             a<sup>m</sup> / a<sup>n</sup> = a<sup>m-n</sup>
         </div>
-        <p><i>Contoh: 5<sup>7</sup> / 5<sup>4</sup> = 5<sup>7-4</sup> = 5<sup>3</sup> = 125</i></p>
-
-        <div class="formula">
+        <div class="formula-box">
             (a<sup>m</sup>)<sup>n</sup> = a<sup>m × n</sup>
         </div>
-        <p><i>Contoh: (3<sup>2</sup>)<sup>3</sup> = 3<sup>6</sup> = 729</i></p>
     </div>
 
     <div class="card">
         <h2>2. Operasi Aljabar Eksponen</h2>
-        <p>Dalam aljabar, kita sering bertemu variabel (seperti <i>x</i> atau <i>y</i>) yang berpangkat. Aturan utamanya adalah: <b>Hanya suku sejenis yang bisa dijumlahkan!</b></p>
+        <p>Dalam aljabar, kita menggunakan variabel (x, y, a, b). Aturan terpenting adalah <strong>Suku Sejenis</strong>.</p>
         
         <h3>A. Penjumlahan & Pengurangan</h3>
-        <p>Syarat: Basis dan Pangkat harus 100% sama.</p>
-        <div class="formula">
-            p.a<sup>n</sup> ± q.a<sup>n</sup> = (p ± q)a<sup>n</sup>
-        </div>
-        <div class="example">
-            <b>Contoh:</b><br>
-            3x<sup>2</sup> + 5x<sup>2</sup> = 8x<sup>2</sup> <br>
-            7y<sup>3</sup> - 2y<sup>3</sup> = 5y<sup>3</sup>
+        <p>Hanya bisa dilakukan jika <strong>basis</strong> dan <strong>pangkatnya</strong> sama persis.</p>
+        <div class="example-box">
+            <strong>Contoh:</strong><br>
+            • 3x<sup>2</sup> + 5x<sup>2</sup> = (3+5)x<sup>2</sup> = 8x<sup>2</sup> <span style="color:green">✓ Bisa</span><br>
+            • 4a<sup>3</sup> - a<sup>3</sup> = 3a<sup>3</sup> <span style="color:green">✓ Bisa</span><br>
+            • 2x<sup>2</sup> + 2x<sup>3</sup> = <em style="color:red">Tidak bisa dijumlahkan</em> (Pangkat berbeda)
         </div>
 
-        <h3>B. Perkalian & Pembagian Aljabar</h3>
-        <div class="example">
-            <b>Contoh Perkalian:</b><br>
-            (2x<sup>2</sup>) * (3x<sup>4</sup>) = (2*3)x<sup>2+4</sup> = 6x<sup>6</sup>
-        </div>
-        <div class="example">
-            <b>Contoh Pembagian:</b><br>
-            (10x<sup>5</sup>) / (2x<sup>2</sup>) = (10/2)x<sup>5-2</sup> = 5x<sup>3</sup>
+        <h3>B. Perkalian & Pembagian</h3>
+        <p>Koefisien dikalikan dengan koefisien, variabel dengan variabel menggunakan sifat eksponen.</p>
+        <div class="example-box">
+            <strong>Contoh:</strong><br>
+            • (2a<sup>3</sup>) × (4a<sup>2</sup>) = (2×4)a<sup>3+2</sup> = 8a<sup>5</sup><br>
+            • (12b<sup>6</sup>) / (3b<sup>2</sup>) = (12/3)b<sup>6-2</sup> = 4b<sup>4</sup>
         </div>
     </div>
 
     <div class="card">
-        <h2>3. Latihan Mandiri</h2>
-        <p>Coba sederhanakan bentuk berikut di buku catatanmu:</p>
-        <ul>
-            <li>Sederhanakan: (4a<sup>3</sup>)<sup>2</sup></li>
-            <li>Hitung: 5x<sup>4</sup> + 2x<sup>4</sup> - 3x<sup>4</sup></li>
-            <li>Sederhanakan: (12y<sup>6</sup>) / (3y<sup>2</sup>)</li>
-        </ul>
+        <h2>3. Pengenalan Logaritma</h2>
+        <p>Logaritma adalah invers (kebalikan) dari eksponen.</p>
+        <div class="formula-box">
+            <sup>a</sup>log b = c   ⇔   a<sup>c</sup> = b
+        </div>
     </div>
 
-    <div style="text-align: center; margin-top: 40px;">
-        <p>© 2026 Portal Belajar Matematika - Fase E</p>
+    <div class="footer">
+        <p>© 2026 Portal Belajar Matematika SMA<br>Dibuat untuk persiapan UTBK & Ujian Sekolah</p>
     </div>
 
 </body>

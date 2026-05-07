@@ -3,39 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuis Matematika</title>
+    <title>Kuis Eksponen Interaktif</title>
     <style>
-        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #f4f7f6; }
-        .quiz-container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .question { margin-bottom: 20px; font-weight: bold; }
-        .options label { display: block; padding: 10px; background: #f9f9f9; margin: 5px 0; border-radius: 5px; cursor: pointer; }
-        .btn-submit { background: #10b981; color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-size: 16px; cursor: pointer; }
-        #result { margin-top: 20px; font-weight: bold; text-align: center; font-size: 1.2em; color: #1e40af; }
+        :root { --primary: #2563eb; --success: #10b981; --error: #ef4444; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .quiz-card { background: white; max-width: 500px; width: 100%; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #1e293b; margin-top: 0; }
+        .question-box { margin-bottom: 25px; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .question-text { font-weight: 600; margin-bottom: 15px; display: block; }
+        .option { display: block; padding: 12px; margin: 8px 0; background: #f1f5f9; border-radius: 8px; cursor: pointer; transition: 0.2s; border: 2px solid transparent; }
+        .option:hover { background: #e2e8f0; }
+        input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+        
+        .correct { background: #d1fae5 !important; border-color: var(--success) !important; }
+        .wrong { background: #fee2e2 !important; border-color: var(--error) !important; }
+        
+        .btn-container { display: flex; gap: 10px; margin-top: 20px; }
+        button { flex: 1; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-submit { background: var(--primary); color: white; }
+        .btn-reset { background: #64748b; color: white; display: none; }
+        #result-display { margin-top: 20px; text-align: center; font-size: 1.2em; font-weight: bold; display: none; }
+        .nav-link { display: block; text-align: center; margin-top: 20px; color: var(--primary); text-decoration: none; font-size: 0.9em; }
     </style>
 </head>
 <body>
-    <div class="quiz-container">
-        <h2>Kuis Eksponen</h2>
-        <div id="quiz">
-            <div class="question">1. Hasil dari 2³ × 2² adalah...</div>
-            <div class="options">
-                <label><input type="radio" name="q1" value="0"> 2⁶</label>
-                <label><input type="radio" name="q1" value="1"> 2⁵</label>
-                <label><input type="radio" name="q1" value="0"> 2¹</label>
+    <div class="quiz-card">
+        <h2>📝 Kuis Eksponen</h2>
+        <form id="quizForm">
+            <div class="question-box" id="q1-box">
+                <span class="question-text">1. Hasil dari 2³ × 2² adalah...</span>
+                <label class="option"><input type="radio" name="q1" value="A"> A. 2⁶</label>
+                <label class="option"><input type="radio" name="q1" value="B"> B. 2⁵ (32)</label>
+                <label class="option"><input type="radio" name="q1" value="C"> C. 2¹</label>
             </div>
-        </div>
-        <button class="btn-submit" onclick="checkQuiz()">Kirim Jawaban</button>
-        <div id="result"></div>
-        <br>
-        <a href="index.html">Kembali ke Menu</a>
+
+            <div class="question-box" id="q2-box">
+                <span class="question-text">2. Bentuk sederhana dari (a⁴)³ adalah...</span>
+                <label class="option"><input type="radio" name="q2" value="A"> A. a⁷</label>
+                <label class="option"><input type="radio" name="q2" value="B"> B. a¹</label>
+                <label class="option"><input type="radio" name="q2" value="C"> C. a¹²</label>
+            </div>
+
+            <div class="question-box" id="q3-box">
+                <span class="question-text">3. Nilai dari 5⁰ adalah...</span>
+                <label class="option"><input type="radio" name="q3" value="A"> A. 1</label>
+                <label class="option"><input type="radio" name="q3" value="B"> B. 0</label>
+                <label class="option"><input type="radio" name="q3" value="C"> C. 5</label>
+            </div>
+
+            <div class="question-box" id="q4-box">
+                <span class="question-text">4. Jika 3ˣ = 81, maka nilai x adalah...</span>
+                <label class="option"><input type="radio" name="q4" value="A"> A. 3</label>
+                <label class="option"><input type="radio" name="q4" value="B"> B. 4</label>
+                <label class="option"><input type="radio" name="q4" value="C"> C. 5</label>
+            </div>
+
+            <div id="result-display"></div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-submit" onclick="submitQuiz()">Kirim Jawaban</button>
+                <button type="button" class="btn-reset" onclick="resetQuiz()">Ulangi Kuis</button>
+            </div>
+        </form>
+        <a href="index.html" class="nav-link">← Kembali ke Menu Utama</a>
     </div>
 
     <script>
-        function checkQuiz() {
+        const answers = { q1: 'B', q2: 'C', q3: 'A', q4: 'B' };
+
+        function submitQuiz() {
             let score = 0;
-            let q1 = document.querySelector('input[name="q1"]:checked');
-            if (q1 && q1.value == "1") score = 100;
-            document.getElementById('result').innerHTML = "Skor Anda: " + score;
+            let total = 4;
+            const form = document.getElementById('quizForm');
+            
+            for (let i = 1; i <= total; i++) {
+                const name = 'q' + i;
+                const selected = form.querySelector(`input[name="${name}"]:checked`);
+                const box = document.getElementById(name + '-box');
+                
+                if (selected) {
+                    if (selected.value === answers[name]) {
+                        score++;
+                        box.classList.add('correct');
+                    } else {
+                        box.classList.add('wrong');
+                    }
+                }
+            }
+
+            const finalScore = (score / total) * 100;
+            const resultDisplay = document.getElementById('result-display');
+            resultDisplay.style.display = 'block';
+            resultDisplay.innerHTML = `Skor Anda: ${finalScore} / 100`;
+            resultDisplay.style.color = finalScore >= 75 ? '#10b981' : '#ef4444';
+
+            document.querySelector('.btn-submit').style.display = 'none';
+            document.querySelector('.btn-reset').style.display = 'block';
+        }
+
+        function resetQuiz() {
+            location.reload();
         }
     </script>
 </body>

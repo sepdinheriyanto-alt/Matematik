@@ -3,34 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Guru Pintar SMA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Kuis Matematika</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #f4f7f6; }
+        .quiz-container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .question { margin-bottom: 20px; font-weight: bold; }
+        .options label { display: block; padding: 10px; background: #f9f9f9; margin: 5px 0; border-radius: 5px; cursor: pointer; }
+        .btn-submit { background: #10b981; color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-size: 16px; cursor: pointer; }
+        #result { margin-top: 20px; font-weight: bold; text-align: center; font-size: 1.2em; color: #1e40af; }
+    </style>
 </head>
-<body class="bg-slate-50">
-
-    <header class="bg-blue-600 text-white p-6 shadow-lg">
-        <h1 class="text-2xl font-bold">Portal Belajar MTK SMA</h1>
-        <p class="text-sm opacity-80">Selamat datang, Pejuang PTN!</p>
-    </header>
-
-    <main class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500 hover:shadow-md transition">
-            <i class="fas fa-book-open text-blue-500 text-3xl mb-4"></i>
-            <h2 class="text-xl font-bold">Modul Materi</h2>
-            <p class="text-gray-600 mb-4">Pelajari rumus cepat Eksponen, Logaritma, dan Trigonometri.</p>
-            <a href="materi.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg">Buka Materi</a>
+<body>
+    <div class="quiz-container">
+        <h2>Kuis Eksponen</h2>
+        <div id="quiz">
+            <div class="question">1. Hasil dari 2³ × 2² adalah...</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="0"> 2⁶</label>
+                <label><input type="radio" name="q1" value="1"> 2⁵</label>
+                <label><input type="radio" name="q1" value="0"> 2¹</label>
+            </div>
         </div>
+        <button class="btn-submit" onclick="checkQuiz()">Kirim Jawaban</button>
+        <div id="result"></div>
+        <br>
+        <a href="index.html">Kembali ke Menu</a>
+    </div>
 
-        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500 hover:shadow-md transition">
-            <i class="fas fa-edit text-green-500 text-3xl mb-4"></i>
-            <h2 class="text-xl font-bold">Latihan Kuis</h2>
-            <p class="text-gray-600 mb-4">Uji kemampuanmu dengan soal-soal standar UTBK.</p>
-            <a href="kuis.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg">Mulai Kuis</a>
-        </div>
-
-    </main>
-
+    <script>
+        function checkQuiz() {
+            let score = 0;
+            let q1 = document.querySelector('input[name="q1"]:checked');
+            if (q1 && q1.value == "1") score = 100;
+            document.getElementById('result').innerHTML = "Skor Anda: " + score;
+        }
+    </script>
 </body>
 </html>

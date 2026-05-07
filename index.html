@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Matematika SMA</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; padding: 20px; }
+        .quiz-container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 500px; width: 100%; }
+        h2 { color: #333; text-align: center; }
+        .question { margin-bottom: 20px; font-weight: bold; color: #555; }
+        .options { list-style: none; padding: 0; }
+        .options li { margin-bottom: 10px; }
+        button { width: 100%; padding: 12px; background-color: #2da44e; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #2c974b; }
+        #result { margin-top: 20px; text-align: center; font-weight: bold; font-size: 18px; color: #2da44e; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>Kuis Matematika SMA</h2>
+    <div id="quiz">
+        <div class="question" id="question">Pertanyaan akan muncul di sini...</div>
+        <ul class="options">
+            <li><input type="radio" name="answer" id="a" class="answer"> <label for="a" id="a_text">Pilihan A</label></li>
+            <li><input type="radio" name="answer" id="b" class="answer"> <label for="b" id="b_text">Pilihan B</label></li>
+            <li><input type="radio" name="answer" id="c" class="answer"> <label for="c" id="c_text">Pilihan C</label></li>
+            <li><input type="radio" name="answer" id="d" class="answer"> <label for="d" id="d_text">Pilihan D</label></li>
+        </ul>
+        <button id="submit">Kirim Jawaban</button>
+    </div>
+    <div id="result"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            question: "Berapakah nilai dari 2^3 + 3^2?",
+            a: "12", b: "15", c: "17", d: "18",
+            correct: "c"
+        },
+        {
+            question: "Jika log 100 = x, maka nilai x adalah...",
+            a: "1", b: "2", c: "10", d: "100",
+            correct: "b"
+        },
+        {
+            question: "Hasil dari (a^3)^2 adalah...",
+            a: "a^5", b: "a^6", c: "a^9", d: "2a^3",
+            correct: "b"
+        }
+    ];
+
+    const questionEl = document.getElementById('question');
+    const a_text = document.getElementById('a_text');
+    const b_text = document.getElementById('b_text');
+    const c_text = document.getElementById('c_text');
+    const d_text = document.getElementById('d_text');
+    const submitBtn = document.getElementById('submit');
+    const answerEls = document.querySelectorAll('.answer');
+    const resultEl = document.getElementById('result');
+
+    let currentQuiz = 0;
+    let score = 0;
+
+    loadQuiz();
+
+    function loadQuiz() {
+        deselectAnswers();
+        const currentQuizData = quizData[currentQuiz];
+        questionEl.innerText = currentQuizData.question;
+        a_text.innerText = currentQuizData.a;
+        b_text.innerText = currentQuizData.b;
+        c_text.innerText = currentQuizData.c;
+        d_text.innerText = currentQuizData.d;
+    }
+
+    function deselectAnswers() {
+        answerEls.forEach(el => el.checked = false);
+    }
+
+    function getSelected() {
+        let answer;
+        answerEls.forEach(el => { if(el.checked) answer = el.id; });
+        return answer;
+    }
+
+    submitBtn.addEventListener('click', () => {
+        const answer = getSelected();
+        if(answer) {
+            if(answer === quizData[currentQuiz].correct) score++;
+            currentQuiz++;
+            if(currentQuiz < quizData.length) {
+                loadQuiz();
+            } else {
+                document.getElementById('quiz').innerHTML = `<h3>Kuis Selesai!</h3>`;
+                resultEl.innerText = `Skor kamu: ${score} dari ${quizData.length}`;
+            }
+        } else {
+            alert("Silakan pilih jawaban terlebih dahulu!");
+        }
+    });
+</script>
+
+</body>
+</html>

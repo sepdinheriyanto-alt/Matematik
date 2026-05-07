@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Materi - Matematika SMA</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: var(--bg); 
+        }
+        .nav-link { 
+            display: inline-flex; 
+            align-items: center; 
+            text-decoration: none; 
+            color: var(--primary); 
+            font-weight: 600; 
+            margin-bottom: 20px; 
+        }
+        .header { 
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; 
+            padding: 40px 20px; 
+            border-radius: 16px; 
+            text-align: center; 
+            margin-bottom: 30px; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 25px; 
+            border: 1px solid #e2e8f0;
+        }
+        h2 { color: var(--secondary); margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+        .formula-box { 
+            background: #f1f5f9; 
+            padding: 20px; 
+            border-left: 4px solid var(--primary); 
+            font-family: 'Cambria Math', 'Times New Roman', serif; 
+            font-size: 1.2rem; 
+            margin: 15px 0; 
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box { 
+            background: #f0fdf4; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border: 1px solid #dcfce7; 
+            margin-top: 10px; 
+        }
+        .badge { 
+            background: var(--primary); 
+            color: white; 
+            padding: 4px 12px; 
+            border-radius: 99px; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+        }
+        .footer { text-align: center; margin-top: 50px; color: #64748b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="nav-link">← Kembali ke Dashboard</a>
+
+    <div class="header">
+        <span class="badge">Kelas X • Semester 1</span>
+        <h1>Eksponen & Aljabar Eksponen</h1>
+        <p>Menguasai konsep dasar bilangan berpangkat dan manipulasinya</p>
+    </div>
+
+    <div class="card">
+        <h2>1. Sifat Dasar Eksponen</h2>
+        <p>Sebelum masuk ke aljabar, ingat kembali aturan dasar berikut:</p>
+        
+        <div class="formula-box">
+            a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup>
+        </div>
+        <div class="formula-box">
+            a<sup>m</sup> / a<sup>n</sup> = a<sup>m-n</sup>
+        </div>
+        <div class="formula-box">
+            (a<sup>m</sup>)<sup>n</sup> = a<sup>m × n</sup>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>2. Operasi Aljabar Eksponen</h2>
+        <p>Dalam aljabar, kita menggunakan variabel (x, y, a, b). Aturan terpenting adalah <strong>Suku Sejenis</strong>.</p>
+        
+        <h3>A. Penjumlahan & Pengurangan</h3>
+        <p>Hanya bisa dilakukan jika <strong>basis</strong> dan <strong>pangkatnya</strong> sama persis.</p>
+        <div class="example-box">
+            <strong>Contoh:</strong><br>
+            • 3x<sup>2</sup> + 5x<sup>2</sup> = (3+5)x<sup>2</sup> = 8x<sup>2</sup> <span style="color:green">✓ Bisa</span><br>
+            • 4a<sup>3</sup> - a<sup>3</sup> = 3a<sup>3</sup> <span style="color:green">✓ Bisa</span><br>
+            • 2x<sup>2</sup> + 2x<sup>3</sup> = <em style="color:red">Tidak bisa dijumlahkan</em> (Pangkat berbeda)
+        </div>
+
+        <h3>B. Perkalian & Pembagian</h3>
+        <p>Koefisien dikalikan dengan koefisien, variabel dengan variabel menggunakan sifat eksponen.</p>
+        <div class="example-box">
+            <strong>Contoh:</strong><br>
+            • (2a<sup>3</sup>) × (4a<sup>2</sup>) = (2×4)a<sup>3+2</sup> = 8a<sup>5</sup><br>
+            • (12b<sup>6</sup>) / (3b<sup>2</sup>) = (12/3)b<sup>6-2</sup> = 4b<sup>4</sup>
+        </div>
+    </div>
+<div class="card">
+        <h2>3. Persamaan & Pertidaksamaan Eksponen</h2>
+        <p>Gunakan logika "Basis harus sama" untuk menyelesaikan soal-soal ini.</p>
+        
+        <h3>A. Persamaan Eksponen</h3>
+        <p>Jika basisnya sudah sama, kita tinggal menyamakan pangkatnya.</p>
+        <div class="formula-box">
+            a<sup>f(x)</sup> = a<sup>p</sup> &nbsp; ⇒ &nbsp; f(x) = p
+        </div>
+        <div class="example-box">
+            <strong>Contoh:</strong><br>
+            2<sup>x+3</sup> = 8 <br>
+            2<sup>x+3</sup> = 2<sup>3</sup> <br>
+            x + 3 = 3 <br>
+            <strong>x = 0</strong>
+        </div>
+
+        <h3>B. Pertidaksamaan Eksponen</h3>
+        <p>Perhatikan basisnya (a)!</p>
+        <ul>
+            <li>Jika <strong>a > 1</strong>: Tanda tetap (contoh: > tetap >)</li>
+            <li>Jika <strong>0 < a < 1</strong>: Tanda <strong>DIBALIK</strong> (contoh: > menjadi <)</li>
+        </ul>
+        <div class="example-box">
+            <strong>Contoh (a > 1):</strong><br>
+            3<sup>x-2</sup> > 27 <br>
+            3<sup>x-2</sup> > 3<sup>3</sup> <br>
+            x - 2 > 3 <br>
+            <strong>x > 5</strong>
+        </div>
+    </div>
+    <div class="card">
+        <h2>3. Pengenalan Logaritma</h2>
+        <p>Logaritma adalah invers (kebalikan) dari eksponen.</p>
+        <div class="formula-box">
+            <sup>a</sup>log b = c   ⇔   a<sup>c</sup> = b
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Portal Belajar Matematika SMA<br>Dibuat untuk persiapan UTBK & Ujian Sekolah</p>
+    </div>
+
+</body>
+</html>

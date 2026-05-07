@@ -150,17 +150,31 @@
             <strong>x > 5</strong>
         </div>
     </div>
-    <div class="card">
-        <h2>3. Pengenalan Logaritma</h2>
-        <p>Logaritma adalah invers (kebalikan) dari eksponen.</p>
-        <div class="formula-box">
-            <sup>a</sup>log b = c   ⇔   a<sup>c</sup> = b
+   <section style="background-color: #fff; padding: 20px; border-radius: 10px; margin-top: 20px; border: 1px solid #e0e0e0;">
+    <h2 style="color: #2563eb;">📝 Latihan Soal & Pembahasan</h2>
+
+    <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <p><strong>Soal 1:</strong> Sederhanakan bentuk <code>(2x³y⁻²)² / (x²y)</code></p>
+        <button onclick="toggleBox('ans1')" style="background-color: #2563eb; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">Cek Pembahasan</button>
+        
+        <div id="ans1" style="display: none; margin-top: 15px; padding: 10px; background-color: #f8fafc; border-left: 4px solid #2563eb;">
+            <strong>Langkah Penyelesaian:</strong><br>
+            1. Kuadratkan pembilang: 4x⁶y⁻⁴<br>
+            2. Bagi dengan penyebut: 4x⁶⁻² · y⁻⁴⁻¹ = 4x⁴y⁻⁵<br>
+            3. Hasil akhir: <strong>4x⁴ / y⁵</strong>
         </div>
     </div>
+</section>
 
-    <div class="footer">
-        <p>© 2026 Portal Belajar Matematika SMA<br>Dibuat untuk persiapan UTBK & Ujian Sekolah</p>
-    </div>
-
+<script>
+function toggleBox(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
